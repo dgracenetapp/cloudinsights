@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
+  <head>
+  <title> | NetApp Cloud Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation">
+  <meta http-equiv="nss-subtype" content="User Guide">
+
+  
+
+  <meta name="description" content="Overview of dashboards in Cloud Insights.">
+  <meta name="keywords" content=" dashboard, widget, custom, view, data">
+
+  <!-- Icons -->
+  <link rel="icon" href="/cloudinsights/en/images/favicon.ico" type="image/x-icon">
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- LUCI CSS Content -->
+  <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/bower_components/eightshapes-blocks/dist/esb.min.css">
+  <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/netapp-library/css/netapp-library.min.css">
+  <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/css/doc.css">
+  <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/css/doc-components.css">
+
+  <link rel="stylesheet" href='/cloudinsights/en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/en/css/clouddocs.css' type='text/css'>
+
+  <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
+  <link rel="stylesheet" type="text/css" href="/cloudinsights/en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloudinsights/en/css/customstyles.css"> -->
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/cloudinsights/en/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel='stylesheet' href='/cloudinsights/en/css/netapp.css' type='text/css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/cloudinsights/en/js/na-search.js'></script>
+  
+
+  <script src='/cloudinsights/en/js/clouddocs.js'></script>
+  <script src='/cloudinsights/en/js/s_code_impl.js'></script>
+  <script src="/cloudinsights/en/js/jquery.navgoco.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+  <script src="/cloudinsights/en/js/toc.js"></script>
+  <script src="/cloudinsights/en/js/customscripts.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco({
+              caretHtml: '',
+              accordion: true,
+              openClass: 'active', // open
+              save: false, // leave false or nav highlighting doesn't work right
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      })
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+
+  <!-- Controls the i18n Browser Redirection -->
+  <script>
+    var siteLocales = [];
+    
+      siteLocales.push("zz");
+    
+      siteLocales.push("en");
+    
+      siteLocales.push("us-en");
+    
+
+    standardizeUrl(siteLocales, "clouddocs.netapp.com", "https://docs.netapp.com");
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class="n-doc__component-detail">
+    <a href="#n-main-content" class="visually-hidden">Skip to main content</a>
+<div class="n-off-canvas-menu">
+  <div class="n-off-canvas-menu__menu">
+    <div class="n-off-canvas-menu__menu-inner">
+      <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
+      <ul class="n-off-canvas-menu__property-navigation-list">
+        <li class="n-off-canvas-menu__property-navigation-list-item ">
+          <a href="https://docs.netapp.com/en/" class="n-off-canvas-menu__property-navigation-link">
+            Home
+          </a>
+          <div class="n-off-canvas-menu__child-menu">
+            <ul class="n-menu__list">
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="n-off-canvas-menu__global-navigation-list">
+         <li class="n-off-canvas-menu__global-navigation-list-header">More From NetApp</li>
+         <li class="n-off-canvas-menu__global-navigation-list-item"><a href="#" class="n-off-canvas-menu__global-navigation-link">Netapp.com</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="n-off-canvas-menu__content-wrap">
+      <!-- Header -->
+      <header>
+  <!-- Top Hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+            <li class="n-top-hat__list-item">
+              <a href="http://www.netapp.com" class="n-top-hat__link">NetApp.com</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Bar -->
+  <div class="n-property-bar n-property-bar--v3">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+          <title>bars</title>
+          <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#bars"></use>
+        </svg></a>
+      </div>
+      <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/en/">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
+              <title>NetApp</title>
+              <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+          <h2 class="n-property-bar__property-name">Cloud Docs</h2>
+        </a>
+      </div>
+
+      <!-- NetApp Search Bar -->
+      
+      <div id="search-demo-container" class="n-property-bar__search">
+        <div id="react-search"></div>
+      </div>
+      
+
+      <div id="ie-i18n-menu" class="n-property-bar__utils">
+        <ul class="n-property-navigation-bar__utils-list">
+          <li class="n-property-navigation-bar__utils-list-item">
+            <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
+              <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
+                <title>globe</title>
+                <use xlink:href="/cloudinsights/en/common/svg/sprite.svg#globe"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End NetApp Search Bar -->
+    </div>
+
+    <div class="n-property-bar__menus">
+      <div id="n-property-navigation-bar__menu--language-selector" class="n-menu n-menu--v3">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list">
+                <li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="/cloudinsights/us-en/" class="n-menu__header-text">English</a>
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: en
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+      <!-- Content -->
+      <main role="main" id="n-main-content" class="n-main-content">
+        <div class="n-container">
+          <div class="n-row">
+            <div class="n-doc n-doc__component-list">
+              <!-- Sidebar Column -->
+              
+              <div class="col-md-3" >
+                  
+
+<ul id="mysidebar" class="nav">
+  
+
+  
+    <li><a href="index.html">Cloud Insights documentation</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Getting started</a>
+      <ul>
+        
+
+  
+    <li><a href="task_cloud_insights_onboarding_1.html">Onboarding</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Collecting Data</a>
+      <ul>
+        
+
+  
+    <li><a href="task_configure_data_collectors.html">Configuring Data Collectors</a></li>
+  
+
+  
+    <li><a href="TBD.html">Troubleshooting data collector failures</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="TBD.html">Inviting Users</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Dashboards</a>
+      <ul>
+        
+
+  
+    <li class="active"><a href="concept_dashboard_overview.html">Dashboard Overview</a></li>
+  
+
+  
+    <li><a href="concept_dashboard_features.html">Features of Dashboards</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Reference</a>
+      <ul>
+        
+
+  
+    <li><a href="TBD.html">FAQ</a></li>
+  
+
+  
+    <li><a href="TBD.html">Cloud Insights Release Notes</a></li>
+  
+
+  
+    <li><a href="TBD.html">What's new</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+              </div>
+              
+
+              <div class="n-doc__component-detail-content n-doc__component-detail-content--show-code">
+                <!-- Begin of page container -->
+                <article class="page-content">
+                  
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">
+    <span>
+      
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/concept_dashboard_overview.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+      
+    </span>
+  </h1>
+</div>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Cloud Insights provides users the flexibility to create operational views of infrastructure data, by allowing you to create custom dashboards with a variety of widgets, each of which provides extensive flexibility in displaying and charting your data.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The examples in this section are for explanation purposes only and do not cover every possible scenario. The concepts and steps herein can be used to create your own dashboards to highlight the data specific to your particular needs.
+</td>
+</tr>
+</table>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#creating-a-dashboard">Creating a Dashboard</a></li>
+<li><a href="#dashboard-features">Dashboard features</a></li>
+<li><a href="#widget-types">Widget types</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-a-dashboard">Creating a Dashboard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You create a custom dashboard in one of two places:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Dashboards &#8658; +New dashboard</strong></p>
+</li>
+<li>
+<p><strong>Dashboards &#8658; Show all dashboards &#8658;</strong> click the <strong>[+Dashboard]</strong> button</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dashboard-features">Dashboard features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Dashboard screen has several controls:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Time selector</strong>: allows you to view dashboard data for a range of time from 3 hours up to 90 days by use of the custom date range selector. You can choose to override this global time range in individual widgets.</p>
+</li>
+<li>
+<p><strong>Edit button</strong>: Selecting "Edit" will enable Edit mode, which allows you to make changes to the dashboard. New dashboards open in Edit mode by default.</p>
+</li>
+<li>
+<p><strong>Save button</strong>: Allows you to save, rename or delete the dashboard.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Widget button</strong>, which allows you to add any number of tables, charts, or other widgets to the dashboard.</p>
+<div class="paragraph">
+<p>Widgets can be resized and relocated to different positions within the dashboard, to give you the best view of your data according to your current needs.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="widget-types">Widget types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can choose from the following widget types:</p>
+</div>
+<div class="paragraph">
+<p>Table widget: A table displaying data according to filters and columns you choose. Table data can be combined in groups that can be collapsed and expanded.</p>
+</div>
+<div class="paragraph">
+<p>Line, Spline, Area, Stacked Area charts: These are time-series chart widgets on which you can display performance and other data over time.</p>
+</div>
+<div class="paragraph">
+<p>Single value widget: A widget allowing you to display a single value that can be derived either directly from a counter or calculated using a query or expression. For example, you can display the sum of total IOPS for all storage in your environment as a single value at the top of your dashboard.</p>
+</div>
+<div class="paragraph">
+<p>Bar chart: A chart to display top or bottom N values, for example, Top 10 storages by capacity or bottom 5 volumes by IOPS.</p>
+</div>
+<div class="paragraph">
+<p>Box Plot chart: A plot of the min, max, median, and the range between lower and upper quartile of data in a single chart.</p>
+</div>
+<div class="paragraph">
+<p>Scatter Plot chart: Plots related data as points, for example, IOPS and latency. In this example, you would quickly see assets with high latency and low IOPS.</p>
+</div>
+<div class="paragraph">
+<p>Pie chart: a traditional pie chart to display data as a piece of the total.</p>
+</div>
+<div class="paragraph">
+<p>Note widget: Up to 1000 characters of free text.</p>
+</div>
+</div>
+</div>
+
+                </article>
+                <!-- Page Container -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      
+      <footer class="n-footer n-footer--v1" style="border-top: solid 10px #DFDFDF;">
+        <div class="n-footer__bottom">
+          <div class="n-container">
+            <div class="n-footer__bottom-left">
+              <div class="n-footer__copyright">
+                  <a href="//www.netapp.com/us/legal/copyright.aspx" class="n-footer__copyright-link">© 1994-2018 NetApp, Inc. All rights reserved.</a>
+              </div>
+              <div class="n-footer__copyright">
+                <a href="//www.netapp.com/us/legal/netapptmlist.aspx" class="n-footer__copyright-link">Trademarks</a>
+              </div>
+              <div class="n-footer__social-links">
+                <ul class="n-footer__social-link-list">
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-blog" href="http://blog.netapp.com" target="_blank" title="blog" alt="blog">
+                      <span class="n-footer__social-link-text">blog</span>
+                      <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                        <title>blog@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#blog"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-community" href="http://community.netapp.com/" target="_blank" title="community" alt="community">
+                      <span class="n-footer__social-link-text">community</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>community@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#comments"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netappdoc" target="_blank" title="twitter" alt="twitter">
+                      <span class="n-footer__social-link-text">twitter</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>twitter@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTechCommTV/" target="_blank" title="youtube" alt="youtube">
+                      <span class="n-footer__social-link-text">youtube</span>
+                      <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                        <title>youtube@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/en/common/svg/sprite.svg#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="n-footer__bottom-right">
+                <p class="n-footer__fine-print">
+                    Have feedback for our website?
+                    <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+                </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="/cloudinsights/en/common/js/components.js"></script>
+    <script src="/cloudinsights/en/common/js/doc-components.js"></script>
+
+    <!-- i18n script -->
+    <script type="text/javascript" src="/cloudinsights/en/js/responsive.js"></script>
+
+    <!-- Elasticsearch JS -->
+    <script type="text/javascript" src='/cloudinsights/en/js/bundle.js'></script>
+  </body>
+
+  
+</html>
