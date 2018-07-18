@@ -318,7 +318,7 @@
         
 
   
-    <li class="active"><a href="concept_dashboard_overview.html">Dashboard Overview</a></li>
+    <li><a href="concept_dashboard_overview.html">Dashboard Overview</a></li>
   
 
   
@@ -372,7 +372,7 @@
   <h1 class="n-doc__component-detail-heading">Dashboards Overview
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/concept_dashboard_overview.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/concept_dashboards_overview.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
       
     </span>
   </h1>
@@ -390,19 +390,12 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-The examples in this section are for explanation purposes only and do not cover every possible scenario. The concepts and steps herein can be used to create your own dashboards to highlight the data specific to your particular needs.
+The examples in these sections are for explanation purposes only and do not cover every possible scenario. The concepts and steps herein can be used to create your own dashboards to highlight the data specific to your particular needs.
 </td>
 </tr>
 </table>
 </div>
-<div id="toc" class="toc">
-<div id="toctitle" class="title">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#creating-a-dashboard">Creating a Dashboard</a></li>
-<li><a href="#dashboard-features">Dashboard features</a></li>
-<li><a href="#widget-types">Widget types</a></li>
-</ul>
-</div>
+<!-- toc disabled -->
 </div>
 </div>
 <div class="sect1">
@@ -414,17 +407,17 @@ The examples in this section are for explanation purposes only and do not cover 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Dashboards &#8658; +New dashboard</strong></p>
+<p><strong>Dashboards &gt; []+New dashboard]</strong></p>
 </li>
 <li>
-<p><strong>Dashboards &#8658; Show all dashboards &#8658;</strong> click the <strong>[+Dashboard]</strong> button</p>
+<p><strong>Dashboards &gt; Show all dashboards &gt;</strong> click the <strong>[+Dashboard]</strong> button</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dashboard-features">Dashboard features</h2>
+<h2 id="dashboard-controls">Dashboard Controls</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Dashboard screen has several controls:</p>
@@ -460,29 +453,39 @@ The examples in this section are for explanation purposes only and do not cover 
 <div class="paragraph">
 <p>You can choose from the following widget types:</p>
 </div>
-<div class="paragraph">
-<p>Table widget: A table displaying data according to filters and columns you choose. Table data can be combined in groups that can be collapsed and expanded.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Table widget</strong>: A table displaying data according to filters and columns you choose. Table data can be combined in groups that can be collapsed and expanded.</p>
+</li>
+<li>
+<p><strong>Line, Spline, Area, Stacked Area charts</strong>: These are time-series chart widgets on which you can display performance and other data over time.</p>
+</li>
+<li>
+<p><strong>Single value widget</strong>: A widget allowing you to display a single value that can be derived either directly from a counter or calculated using a query or expression. For example, you can display the sum of total IOPS for all storage in your environment as a single value at the top of your dashboard.</p>
+</li>
+<li>
+<p><strong>Bar chart</strong>: A chart to display top or bottom N values, for example, Top 10 storages by capacity or bottom 5 volumes by IOPS.</p>
+</li>
+<li>
+<p><strong>Box Plot chart</strong>: A plot of the min, max, median, and the range between lower and upper quartile of data in a single chart.</p>
+</li>
+<li>
+<p><strong>Scatter Plot chart</strong>: Plots related data as points, for example, IOPS and latency. In this example, you would quickly see assets with high latency and low IOPS.</p>
+</li>
+<li>
+<p><strong>Pie chart</strong>: a traditional pie chart to display data as a piece of the total.</p>
+</li>
+<li>
+<p><strong>Note widget</strong>: Up to 1000 characters of free text.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Line, Spline, Area, Stacked Area charts: These are time-series chart widgets on which you can display performance and other data over time.</p>
+<p>For more detailed explanations of these and other Dashboard Features, link::concept_dashboard_features.html[click here].</p>
 </div>
 <div class="paragraph">
-<p>Single value widget: A widget allowing you to display a single value that can be derived either directly from a counter or calculated using a query or expression. For example, you can display the sum of total IOPS for all storage in your environment as a single value at the top of your dashboard.</p>
-</div>
-<div class="paragraph">
-<p>Bar chart: A chart to display top or bottom N values, for example, Top 10 storages by capacity or bottom 5 volumes by IOPS.</p>
-</div>
-<div class="paragraph">
-<p>Box Plot chart: A plot of the min, max, median, and the range between lower and upper quartile of data in a single chart.</p>
-</div>
-<div class="paragraph">
-<p>Scatter Plot chart: Plots related data as points, for example, IOPS and latency. In this example, you would quickly see assets with high latency and low IOPS.</p>
-</div>
-<div class="paragraph">
-<p>Pie chart: a traditional pie chart to display data as a piece of the total.</p>
-</div>
-<div class="paragraph">
-<p>Note widget: Up to 1000 characters of free text.</p>
+<p>For example dashboards, link::TBD.html[click here].</p>
 </div>
 </div>
 </div>
