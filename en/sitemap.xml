@@ -13,9 +13,16 @@
   
   
     <url>
+      <loc>https://docs.netapp.com/en/cloudinsights/TBD.html</loc>
+      
+        <lastmod>2018-07-18T14:47:08+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/en/cloudinsights/concept_dashboard_features.html</loc>
       
-        <lastmod>2018-07-18T03:38:06+00:00</lastmod>
+        <lastmod>2018-07-18T14:47:08+00:00</lastmod>
       
     </url>
   
@@ -36,28 +43,28 @@
     <url>
       <loc>https://docs.netapp.com/en/cloudinsights//search.html</loc>
       
-        <lastmod>2018-07-18T14:25:12+00:00</lastmod>
+        <lastmod>2018-07-18T15:58:49+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/en/cloudinsights/task_cloud_insights_onboarding_1.html</loc>
       
-        <lastmod>2018-07-17T21:49:57+00:00</lastmod>
+        <lastmod>2018-07-18T14:47:08+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/en/cloudinsights/task_configure_acquisition_unit.html</loc>
       
-        <lastmod>2018-07-17T21:49:57+00:00</lastmod>
+        <lastmod>2018-07-18T14:47:08+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/en/cloudinsights/task_configure_data_collectors.html</loc>
       
-        <lastmod>2018-07-17T21:49:57+00:00</lastmod>
+        <lastmod>2018-07-18T14:47:08+00:00</lastmod>
       
     </url>
   
