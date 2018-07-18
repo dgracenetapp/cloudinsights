@@ -16,7 +16,7 @@
   
 
   <meta name="description" content="This topic describes how to create an annotation.">
-  <meta name="keywords" content=" acquisition, AU, keyword3, keyword4, keyword5">
+  <meta name="keywords" content=" annotations, annotation rules, manual annotations,">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
@@ -390,10 +390,160 @@
   </h1>
 </div>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>You can create annotations and assign them to assets you monitor. Annotations<br>
+<p>You create annotations and assign them to assets you monitor. Annotations<br>
 are notes that provide information about an asset, such as physical location, end<br>
-of life, storage tier, or volume service level.</p>
+of life, storage tier, or volume service levels.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="manually-assigning-annotations-to-assets">Manually assigning annotations to assets</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>List any industry terminology to which environment data must be associated.</p>
+</li>
+<li>
+<p>List corporate terminology to which environment data must be associated, which<br>
+is not already being tracked using the business entities.</p>
+</li>
+<li>
+<p>Identify any default annotation types that you might be able to use.</p>
+</li>
+<li>
+<p>Identify which custom annotations you need to create.<br>
+You need to create the annotation before it can be assigned to an asset.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use the following steps to create an annotation.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Cloud Insights menu, click <strong>Manage &gt; Annotations</strong></p>
+</li>
+<li>
+<p>Click <strong>+ Annotation</strong> to create a new annotation.</p>
+</li>
+<li>
+<p>Enter a Name, Description, and type for the new annotation.</p>
+<div class="paragraph">
+<p>For example, enter the following to create a text annotation that defines the<br>
+physical location of an asset in Data Center 4:</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist loweralpha">
+<div class="title">Steps</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter a name for the annotation (Location)</p>
+</li>
+<li>
+<p>Enter a description of what the annotation is describing (Physical location is Data Center 4)</p>
+</li>
+<li>
+<p>Enter the 'type' of annotation it is (Text).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="assigning-annotations-using-annotation-rules">Assigning annotations using annotation rules</h2>
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>To automatically assign annotations to assets based on criteria that you define, you configure annotation rules. Cloud Insights assigns the annotations to assets based on these rules. Cloud Insights also provides two default annotation rules, which you can modify to suit your needs or remove if you do not want to use them.</p>
+</div>
+<div class="sect2">
+<h3 id="default-storage-annotation-rules">Default storage annotation rules</h3>
+<div class="paragraph lead">
+<p>To expedite the assignment of storage annotations to your resources, OnCommand Insight includes 21 default annotation rules, which associate a tier level with a storage tier model. All of your storage resources are automatically associated with a tier upon acquisition of the assets in your environment.<br>
+The default annotation rules apply a tier annotations in the following way:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tier 1, storage quality tier</dt>
+<dd>
+<p>The Tier 1 annotation is applied to the following vendors and their specified families: EMC (Symmetrix), HDS (HDS9500V, HDS9900, HDS9900V, R600, R700, USP r, USP V), IBM (DS8000), NetApp (FAS6000 or FAS6200), and Violin (Memory).</p>
+</dd>
+<dt class="hdlist1">Tier 2, storage quality tier</dt>
+<dd>
+<p>The Tier 2 annotation is applied to the following vendors and their specified families: HP (3PAR StoreServ or EVA), EMC (CLARiiON), HDS (AMS or D800), IBM (XIV), and NetApp (FAS3000, FAS3100, and FAS3200).</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>You can edit the default settings of these rules to match your tier requirements, or you can remove them if you do not need them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-annotation-rules">Creating annotation rules</h3>
+<div class="paragraph lead">
+<p>As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Insight evaluates the annotation rules.<br>
+.Before you begin<br>
+You must have created a query for the annotation rule.</p>
+</div>
+<div class="paragraph">
+<div class="title">About this task</div>
+<p>Although you can edit the annotation types while you are creating the rules, you should have defined the types ahead of time.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>Manage &gt; Annotation rules</strong></p>
+<div class="paragraph">
+<p>The Annotation Rules page displays the list of existing annotation rules.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>+ Add</strong>.</p>
+</li>
+<li>
+<p>Do the following:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Name</strong> box, enter a unique name that describes the rule.</p>
+<div class="paragraph">
+<p>This name will appear in the Annotation Rules page.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Query</strong> and select the query that is used to apply the annotation to assets.</p>
+</li>
+<li>
+<p>Click <strong>Annotation</strong> and select the annotation you want to apply.</p>
+</li>
+<li>
+<p>Click <strong>Value</strong> and select a value for the annotation.</p>
+<div class="paragraph">
+<p>For example, if you choose Birthday as the annotation, you specify a date for the value.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+<li>
+<p>Click <strong>Run all rules</strong> if you want to run all the rules immediately; otherwise, the rules are run at a regularly scheduled interval.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 
                 </article>

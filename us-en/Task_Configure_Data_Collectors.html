@@ -3,7 +3,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Getting started gathering data | NetApp Cloud Docs</title>
+  <title>Configuring Data Collectors | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,11 +15,11 @@
 
   
 
-  <meta name="description" content="Getting started with Cloud Insights.">
-  <meta name="keywords" content=" invite, roles, data collector, acquisition unit, AU">
+  <meta name="description" content="A summary.">
+  <meta name="keywords" content=" acquisition, AU, data collector, collector">
 
   <!-- Icons -->
-  <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/cloudinsights/us-en/images/favicon.ico" type="image/x-icon">
 
   <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
 
@@ -32,34 +32,34 @@
   <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/css/doc.css">
   <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/css/doc-components.css">
 
-  <link rel="stylesheet" href='/cloudinsights/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/css/na-search.css' type='text/css'>
-  <link rel='stylesheet' href='/cloudinsights/css/clouddocs.css' type='text/css'>
+  <link rel="stylesheet" href='/cloudinsights/us-en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/clouddocs.css' type='text/css'>
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
-  <link rel="stylesheet" type="text/css" href="/cloudinsights/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/cloudinsights/css/customstyles.css"> -->
+  <link rel="stylesheet" type="text/css" href="/cloudinsights/us-en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloudinsights/us-en/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/cloudinsights/css/boxshadowproperties.css">
+  <link rel="stylesheet" href="/cloudinsights/us-en/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
-  <link rel='stylesheet' href='/cloudinsights/css/netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/us-en/css/netapp.css' type='text/css'>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
   
-    <script src='/cloudinsights/js/na-search.js'></script>
+    <script src='/cloudinsights/us-en/js/na-search.js'></script>
   
 
-  <script src='/cloudinsights/js/clouddocs.js'></script>
-  <script src='/cloudinsights/js/s_code_impl.js'></script>
-  <script src="/cloudinsights/js/jquery.navgoco.min.js"></script>
+  <script src='/cloudinsights/us-en/js/clouddocs.js'></script>
+  <script src='/cloudinsights/us-en/js/s_code_impl.js'></script>
+  <script src="/cloudinsights/us-en/js/jquery.navgoco.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
-  <script src="/cloudinsights/js/toc.js"></script>
-  <script src="/cloudinsights/js/customscripts.js"></script>
+  <script src="/cloudinsights/us-en/js/toc.js"></script>
+  <script src="/cloudinsights/us-en/js/customscripts.js"></script>
 
   <script>
       $(document).ready(function() {
@@ -144,7 +144,7 @@
       <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
       <ul class="n-off-canvas-menu__property-navigation-list">
         <li class="n-off-canvas-menu__property-navigation-list-item ">
-          <a href="https://docs.netapp.com/zz/" class="n-off-canvas-menu__property-navigation-link">
+          <a href="https://docs.netapp.com/us-en/" class="n-off-canvas-menu__property-navigation-link">
             Home
           </a>
           <div class="n-off-canvas-menu__child-menu">
@@ -185,19 +185,19 @@
       <div class="n-property-bar__menu-toggle">
         <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
           <title>bars</title>
-          <use xlink:href="/cloudinsights/common/svg/sprite.svg#bars"></use>
+          <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#bars"></use>
         </svg></a>
       </div>
       <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
-        <a class="n-property-bar__property-link" href="https://docs.netapp.com/zz/">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/us-en/">
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
             <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
-              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
           <h2 class="n-property-bar__property-name">Cloud Docs</h2>
@@ -217,7 +217,7 @@
             <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
               <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
                 <title>globe</title>
-                <use xlink:href="/cloudinsights/common/svg/sprite.svg#globe"></use>
+                <use xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#globe"></use>
               </svg>
             </a>
           </li>
@@ -243,7 +243,7 @@
             </li>
           </ul>
           <div class="menu__footer">
-            <p>Current Language: zz
+            <p>Current Language: us-en
             </p>
           </div>
         </div>
@@ -381,141 +381,53 @@
                   
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Getting started gathering data
+  <h1 class="n-doc__component-detail-heading">Configuring Data Collectors
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_getting_started_with_cloud_insights.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/Task_Configure_Data_Collectors.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
       
     </span>
   </h1>
 </div>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>
-= Getting Started with Cloud Insights (***TBD: Change this title)</p>
+<p>:hardbreaks:AA
+:toclevels: 1
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:task-configure-data-collectors.adoc
+= Configuring Data Collectors</p>
+</div>
+<div class="paragraph lead">
+<p>You configure Data Collectors in your Cloud Insights environment to collect data from devices in the data center!</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-<div class="paragraph">
-<p>After you have signed up for Cloud Insights, you must do the following in order to begin collecting and managing data.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Install at least one Acquisition Unit</p>
-</li>
-<li>
-<p>Add data collectors</p>
-</li>
-<li>
-<p>Invite users and assign roles</p>
-</li>
-</ol>
+<div class="paragraph lead">
+<p>You configure Data Collectors in your Cloud Insights environment to collect data from devices in the data center.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s get started. If you haven&#8217;t already done so, sign in at <a href="http://cloud.netapp.com" class="bare">http://cloud.netapp.com</a> and go to your Cloud Insights tenant.<br>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 75a33221a85e6b18c60ebfaf412f3ebde96d4e1d</p>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 75a33221a85e6b18c60ebfaf412f3ebde96d4e1d:task_configure_data_collectors.adoc
+.Before you begin
+. You must have configured an Acquisition Unit before you can start collecting data
+. You need credentials for the devices from which you are collecting Data.
+. Device network addresses, account information, and passwords for all devices and possibly these additional details:
+.Steps
+. From the Cloud Insights menu, click Admin <strong>[&gt;]</strong> Data Collectors
++ The system displays the available Data Collectors arranged by vendor.
+. Click <strong>[+]</strong> for the vendor of the data collector you want to configure.
+. Click the data collector you want to configure.
++ The system displays the Add Collector screen
+. Enter a name for the data collector.
++ Names can contain can contain letters (a-z), numbers (0-9), dashes (-), underscores (_), apostrophes ('), and periods (.).
+. Enter the Acquisition Unit to associate with this data collector.
+. Click <strong>[Continue]</strong>
+. Enter the required fields in the Configuration screen.
+. Click <strong>[Test Configuration]</strong> to verify that the data collector is properly configured.
++ Some Data Collectors have an advanced configuration option. Enter advanced configuration information as required.</p>
 </div>
-<!-- toc disabled -->
-<div class="paragraph">
-<p>== Setup and Collect data</p>
-</div>
-<div class="paragraph">
-<p>After you have signed up for Cloud Insights, you must do the following in order to begin collecting data.</p>
-</div>
-<div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>
-. Invite users and assign roles<br>
-. Install at least one Acquisition Unit<br>
-. Add data collectors</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Instructions on setting up an Acquisition Unit are <strong>coming soon</strong>.<br>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 75a33221a85e6b18c60ebfaf412f3ebde96d4e1d</p>
-</div>
-<div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>
-Let&#8217;s get started. If you haven&#8217;t already done so, sign in at <a href="http://cloud.netapp.com" class="bare">http://cloud.netapp.com</a> and go to your Cloud Insights tenant.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="inviting-users-to-access-the-tenant">Inviting users to access the tenant</h3>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Data collectors discover information from your data sources, such as storage devices, network switches, and virtual machines. The information gathered is used for analysis, validation, monitoring and troubleshooting. You need to <a href="task_configure_data_collectors.html">configure your data collectors</a> before Cloud Insights can gather data from them.</p>
-</div>
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 75a33221a85e6b18c60ebfaf412f3ebde96d4e1d</p>
-</div>
-<div class="paragraph">
-<p>***TBD: This topic feels out of place here, so we will likely move it to "post-onboarding".</p>
-</div>
-<div class="paragraph">
-<p>The Account Owner invites users to access the tenant, and assigns a role to each user.  Users with the Administrator role can invite other users as well.</p>
-</div>
-<div class="paragraph">
-<p>To Invite a user, in the Cloud Insights tenant, click on <strong>Admin &gt; Account Management</strong> and follow these steps:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Click the <strong>[+User]</strong> button</p>
-</li>
-<li>
-<p>Enter the email addresses for the users you wish to invite.</p>
-</li>
-<li>
-<p>Assign a <strong>Role</strong> to these users. Note that all of the users in the email list will receive this Role.<br>
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-</li>
-<li>
-<p>When finished, click <strong>[Invite]</strong>.</p>
-<div class="paragraph">
-<p>Users will have 14 days to accept the invitation. Once a user accepts the invitation, he or she will be taken to the NetApp Cloud Portal, where they will <a href="task_cloud_insights_onboarding_1.html">sign up</a> using the email address in the invitation. If they have an existing account for that email address, they can simply sign in and will then be able to access the Cloud Insights tenant.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>=== Setting up an Acquisition Unit to collect data.</p>
-</div>
-<div class="paragraph">
-<p>An Acquisition Unit is required to inject data into Cloud Insights. You will need to download and install the Acquisition Unit software on a server or VM to collect data for Cloud Insights.</p>
-</div>
-<div class="paragraph">
-<p>You may set up as many Acquisition Units as needed. For example, you may want different Acquisition Units collecting information from data centers in different regions.</p>
-</div>
-<div class="paragraph">
-<p>For instructions on setting up an Acquisition Unit, see <a href="Task-Configure-acquisition-unit.html">Configuring an Acquisition Unit</a>.</p>
-</div>
-<div class="paragraph">
-<p>=== Adding data collectors</p>
-</div>
-<div class="paragraph">
-<p>***TBD: Say some nice things about data collectors here. and link to the <a href="Task_Configure_Data_Collectors.html">instructions for data collectors</a></p>
-</div>
-<div class="paragraph">
-<p>Related topics:<br>
-<a href="task_troubleshooting_data_collector_failures.html">Troubleshooting data collector failures</a>.</p>
-</div>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>When finished, click <strong>[Invite]</strong>.</p>
-<div class="paragraph">
-<p>Users will have 14 days to accept the invitation. Once a user accepts the invitation, he or she will be taken to the NetApp Cloud Portal, where they will <a href="task_cloud_insights_onboarding_1.html">sign up</a> using the email address in the invitation. If they have an existing account for that email address, they can simply sign in and will then be able to access the Cloud Insights tenant.<br>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 75a33221a85e6b18c60ebfaf412f3ebde96d4e1d</p>
-</div>
-</li>
-</ol>
 </div>
 </div>
 
@@ -546,7 +458,7 @@ Let&#8217;s get started. If you haven&#8217;t already done so, sign in at <a hre
                       <span class="n-footer__social-link-text">blog</span>
                       <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                         <title>blog@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#blog"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#blog"></use>
                       </svg>
                     </a>
                   </li>
@@ -555,7 +467,7 @@ Let&#8217;s get started. If you haven&#8217;t already done so, sign in at <a hre
                       <span class="n-footer__social-link-text">community</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>community@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#comments"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#comments"></use>
                       </svg>
                     </a>
                   </li>
@@ -565,7 +477,7 @@ Let&#8217;s get started. If you haven&#8217;t already done so, sign in at <a hre
                       <span class="n-footer__social-link-text">twitter</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>twitter@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#twitter"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#twitter"></use>
                       </svg>
                     </a>
                   </li>
@@ -574,7 +486,7 @@ Let&#8217;s get started. If you haven&#8217;t already done so, sign in at <a hre
                       <span class="n-footer__social-link-text">youtube</span>
                       <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                         <title>youtube@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#youtube"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/us-en/common/svg/sprite.svg#youtube"></use>
                       </svg>
                     </a>
                   </li>
@@ -593,14 +505,14 @@ Let&#8217;s get started. If you haven&#8217;t already done so, sign in at <a hre
 
     </div>
 
-    <script src="/cloudinsights/common/js/components.js"></script>
-    <script src="/cloudinsights/common/js/doc-components.js"></script>
+    <script src="/cloudinsights/us-en/common/js/components.js"></script>
+    <script src="/cloudinsights/us-en/common/js/doc-components.js"></script>
 
     <!-- i18n script -->
-    <script type="text/javascript" src="/cloudinsights/js/responsive.js"></script>
+    <script type="text/javascript" src="/cloudinsights/us-en/js/responsive.js"></script>
 
     <!-- Elasticsearch JS -->
-    <script type="text/javascript" src='/cloudinsights/js/bundle.js'></script>
+    <script type="text/javascript" src='/cloudinsights/us-en/js/bundle.js'></script>
   </body>
 
   

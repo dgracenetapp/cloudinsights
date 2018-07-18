@@ -20,6 +20,20 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/en/cloudinsights/</loc>
+      
+        <lastmod>2018-07-10T21:11:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/en/cloudinsights/Task_Configure_Data_Collectors.html</loc>
+      
+        <lastmod>2018-06-28T17:50:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/en/cloudinsights/concept_dashboard_features.html</loc>
       
         <lastmod>2018-07-18T14:47:08+00:00</lastmod>
@@ -43,7 +57,14 @@
     <url>
       <loc>https://docs.netapp.com/en/cloudinsights//search.html</loc>
       
-        <lastmod>2018-07-18T15:58:49+00:00</lastmod>
+        <lastmod>2018-07-18T17:42:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/en/cloudinsights/Task_Configure_Data_Collectors.html</loc>
+      
+        <lastmod>2018-07-18T15:23:11+00:00</lastmod>
       
     </url>
   
@@ -55,23 +76,23 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/en/cloudinsights/task_configure_acquisition_unit.html</loc>
+      <loc>https://docs.netapp.com/en/cloudinsights/Task_Configure_acquisition_unit.html</loc>
       
-        <lastmod>2018-07-18T14:47:08+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/en/cloudinsights/task_configure_data_collectors.html</loc>
-      
-        <lastmod>2018-07-18T14:47:08+00:00</lastmod>
+        <lastmod>2018-07-18T15:23:11+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/en/cloudinsights/task_create_annotation.html</loc>
       
-        <lastmod>2018-07-17T13:57:09+00:00</lastmod>
+        <lastmod>2018-07-18T15:13:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/en/cloudinsights/task_create_annotations.html</loc>
+      
+        <lastmod>2018-07-18T14:47:06+00:00</lastmod>
       
     </url>
   
@@ -92,7 +113,7 @@
     <url>
       <loc>https://docs.netapp.com/en/cloudinsights/task_getting_started_with_cloud_insights.html</loc>
       
-        <lastmod>2018-07-18T13:51:00+00:00</lastmod>
+        <lastmod>2018-07-18T15:23:11+00:00</lastmod>
       
     </url>
   
