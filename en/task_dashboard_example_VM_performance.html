@@ -3,7 +3,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Cloud Insights | NetApp Cloud Docs</title>
+  <title> | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +15,8 @@
 
   
 
-  <meta name="description" content="Welcome to the documentation portal for Cloud Insights.">
-  <meta name="keywords" content=" ">
+  <meta name="description" content="Dashboard example highlighting virtual machine performance.">
+  <meta name="keywords" content=" dashboard, widget, custom, example, virtual machine, vm, performance">
 
   <!-- Icons -->
   <link rel="icon" href="/cloudinsights/en/images/favicon.ico" type="image/x-icon">
@@ -267,7 +267,7 @@
   
 
   
-    <li class="active"><a href="index.html">Cloud Insights documentation</a></li>
+    <li><a href="index.html">Cloud Insights documentation</a></li>
   
 
   
@@ -329,7 +329,7 @@
         
 
   
-    <li><a href="task_dashboard_example_VM_performance.html">Virtual Machine Perfromance</a></li>
+    <li class="active"><a href="task_dashboard_example_VM_performance.html">Virtual Machine Perfromance</a></li>
   
 
 
@@ -397,67 +397,176 @@
                   
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Cloud Insights
+  <h1 class="n-doc__component-detail-heading">
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/index.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_dashboard_example_VM_performance.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
       
     </span>
   </h1>
 </div>
 
-<div class="paragraph">
-<p>Cloud Insights provides intelligent operations and business insight across the enterprise, enabling the rationalization and optimization of costs, risk reduction, and advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-This documentation is Preview documentation only. Topics and instructions are subject to change. For more information on Cloud Insights, go to <a href="http://cloud.netapp.com" class="bare">http://cloud.netapp.com</a>.
-</td>
-</tr>
-</table>
+<div class="paragraph lead">
+<p>There are many challenges facing IT operations today. Administrators are being asked to do more with less, and having full visibility into your dynamic data centers is a must. In this example, we will show you how to create a dashboard with widgets that give you operational insights into the virtual machine (VM) performance in your environment. By following this example, and creating widgets to target your own specific needs, you will be able to visualize backend storage performance compared to frontend virtual machine performance, or view VM latency versus I/O demand.</p>
 </div>
 <div class="paragraph">
-<p><a href="task_cloud_insights_onboarding_1.html">Signing up for Cloud Insights</a></p>
-</div>
-<div class="paragraph">
-<p><a href="task_getting_started_with_cloud_insights.html">Preparing to Collect Data</a></p>
-</div>
-<div class="paragraph">
-<p><a href="concept_dashboards_overview.html">Using my Data: Working with Dashboards</a></p>
-</div>
-<div class="paragraph">
-<p><a href="task_create_annotation.html">Using my Data: Annotating Assets</a></p>
-</div>
-<div class="paragraph">
-<p>Additional topics coming soon:</p>
+<div class="title">About this task</div>
+<p>Here we will create a Virtual Machine Performance dashboard containing the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Using my data:</p>
-<div class="ulist">
-<ul>
+<p>a table listing VM names and performance data</p>
+</li>
 <li>
-<p>Querying</p>
+<p>a chart comparing VM Latency to Storage Latency</p>
+</li>
+<li>
+<p>a chart showing Read, Write and Total IOPS for VMs</p>
+</li>
+<li>
+<p>a chart showing Max Throughput for your VMs</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>This is just a basic example. You can customize your dashboard to highlight and compare any performance data you choose, in order to target for your own operational best practices.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Log in to Insight as a user with administrative permissions.</p>
 </li>
 <li>
-<p>Thresholds and Alerts</p>
+<p>From the <strong>Dashboards</strong> menu, select <strong>[+New dashboard]</strong>.</p>
+<div class="paragraph">
+<p>The <strong>New dashboard</strong> page opens.</p>
+</div>
 </li>
 <li>
-<p>How-To&#8217;s</p>
+<p>At the top of the page, enter a unique name for the dashboard, for example "VM Performance by Application".</p>
 </li>
 <li>
-<p>FAQ</p>
+<p>Click <strong>Save</strong> to save the dashboard with the new name.</p>
 </li>
-</ul>
+<li>
+<p>Let&#8217;s start adding our widgets. If necessary, click the <strong>Edit</strong> icon to enable Edit mode.</p>
+</li>
+<li>
+<p>Click the <strong>Add Widget</strong> icon and select <strong>Table</strong> to add a new table widget to the dashboard.</p>
+<div class="paragraph">
+<p>The Edit Widget dialog opens. The default name is "Widget 1" and the default data displayed is for all storages in your environment.</p>
+</div>
+</li>
+<li>
+<p>We can customize this widget. In the Name field at the top, delete "Widget 1" and enter "Virtual Machine Performance table".</p>
+</li>
+<li>
+<p>Click the asset type drop-down and change <em>Storage</em> to <em>Virtual Machine</em>.</p>
+<div class="paragraph">
+<p>The table data changes to show all virtual machines in your environment. For now, the table only shows the VM names.</p>
+</div>
+</li>
+<li>
+<p>Let&#8217;s add a few columns to the table. Click the Gear icon on the right and select <em>Data Center</em>, <em>Storage name</em>, and <em>IOPS - Total</em>. You can also try typing the name into the search to quickly display the desired field.</p>
+<div class="paragraph">
+<p>These columns are now displayed in the table. You can sort the table by any of these columns. Note that the columns are displayed in the order in which they were added to the widget.</p>
+</div>
+</li>
+<li>
+<p>For this exercise we will exclude VMs that are not actively in use, so let&#8217;s filter out anything with less than 10 total IOPS. Click the <strong>[+]</strong> button next to <strong>Filter by</strong> and select <em>IOPS - Total</em>. Click on <strong>Any</strong> and enter "10" in the <strong>from</strong> field. Leave the <strong>to</strong> field empty.</p>
+<div class="paragraph">
+<p>The table now shows only VMs with 10 or more total IOPS.</p>
+</div>
+</li>
+<li>
+<p>We can further collapse the table by grouping results. Click the <strong>[+]</strong> button next to <strong>Group by</strong> and select a field to group by, such as <em>Application</em> or <em>Hypervisor name</em>. Grouping is automatically applied.</p>
+<div class="paragraph">
+<p>The table rows are now grouped according to your setting. You can expand and collapse the groups as needed. Grouped rows show rolled up data for each of the columns. Some columns allow you to choose the roll up method for that column.</p>
+</div>
+</li>
+<li>
+<p>When you have customized the table widget to your satisfaction, click the <strong>[Save]</strong> button.</p>
+<div class="paragraph">
+<p>The table widget is saved to the dashboard.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can resize the widget on the dashboard by dragging the lower-right corner. Make the widget wider to show all the columns clearly. Click <strong>Save</strong> to save the current dashboard.</p>
+</div>
+<div class="paragraph">
+<p>Next we will add some charts to show our VM Performance. Let&#8217;s create a line chart comparing VM latency with Storage latency.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If necessary, click the <strong>Edit</strong> icon on the dashboard to enable Edit mode.</p>
+</li>
+<li>
+<p>Click the <strong>[Add widget]</strong> icon and select <em>Line Chart</em> to add a new line chart widget to the dashboard.</p>
+</li>
+<li>
+<p>The <strong>Edit Widget</strong> dialog opens. Name this widget "VM vs Storage Max Latency"</p>
+</li>
+<li>
+<p>Select <strong>Virtual Machine</strong> and choose <em>Latency - Max</em>. Set any filters you wish, or leave <strong>Filter by</strong> empty. For <strong>Roll up</strong>, choose <em>Sum</em> by <em>All</em>. Display this data as a <em>Line Chart</em>, and leave <em>Y-Axis</em> as <em>Primary</em>.</p>
+</li>
+<li>
+<p>Click the <strong>[+Query]</strong> button to add a second data line. For this line, select <em>Storage</em> and <em>Latency - Max</em>. Set any filters you wish, or leave <strong>Filter by</strong> empty. For <strong>Roll up</strong>, choose <em>Sum</em> by <em>All</em>. Display this data as a <em>Line Chart</em>, and leave <em>Y-Axis</em> as <em>Primary</em>.</p>
+</li>
+<li>
+<p>Click <strong>[Save]</strong> to add this widget to the dashboard.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Next we will add a chart showing VM Read, Write and Total IOPS in a single chart.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the <strong>[Add widget]</strong> icon and select <em>Area Chart</em> to add a new area chart widget to the dashboard.</p>
+</li>
+<li>
+<p>The Edit Widget dialog opens. Name this widget "VM IOPS"</p>
+</li>
+<li>
+<p>Select <strong>Virtual Machine</strong> and choose <em>IOPS - Total</em>. Set any filters you wish, or leave <strong>Filter by</strong> empty. for <strong>Roll up</strong>, choose <em>Sum</em> by <em>All</em>. Display this data as an <em>Area Chart</em>, and leave <em>Y-Axis</em> as <em>Primary</em>.</p>
+</li>
+<li>
+<p>Click the <strong>[+Query]</strong> button to add a second data line. For this line, select <strong>Virtual Machine</strong> and choose <em>IOPS - Read</em>.</p>
+</li>
+<li>
+<p>Click the <strong>[+Query]</strong> button to add a third data line. For this line, select <strong>Virtual Machine</strong> and choose <em>IOPS - Write</em>.</p>
+</li>
+<li>
+<p>Click <strong>[Save]</strong> to add this widget to the dashboard.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Next we will add a chart showing VM Throughput for each Application associated with the VM. We will use the Roll Up feature for this.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the <strong>[Add widget]</strong> icon and select <em>Line Chart</em> to add a new line chart widget to the dashboard.</p>
+</li>
+<li>
+<p>The Edit Widget dialog opens. Name this widget "VM Throughput by Application"</p>
+</li>
+<li>
+<p>Select Virtual Machine and choose Throughput - Total. Set any filters you wish, or leave Filter by empty. For Roll up, choose "Max" and select by "Application" or "Name". Show the Top 10 applications. Display this data as a Line Chart, and leave Y-Axis as Primary.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Click Save to add this widget to the dashboard.<br>
+You can move widgets by holding down the mouse button anywhere in the top of the widget and dragging to a new location. You can resize widgets by dragging the lower-right corner. Be sure to Save the dashboard after you make your changes.<br>
+Your final VM Performance Dashboard will look like this:</p>
 </div>
 
                 </article>
