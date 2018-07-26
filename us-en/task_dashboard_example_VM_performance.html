@@ -464,6 +464,13 @@
 <p>The Edit Widget dialog opens. The default name is "Widget 1" and the default data displayed is for all storages in your environment.</p>
 </div>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/VMDashboard-TableWidget1.png" alt="VMDashboard TableWidget1"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>We can customize this widget. In the Name field at the top, delete "Widget 1" and enter "Virtual Machine Performance table".</p>
 </li>
@@ -474,13 +481,13 @@
 </div>
 </li>
 <li>
-<p>Let&#8217;s add a few columns to the table. Click the Gear icon on the right and select <em>Data Center</em>, <em>Storage name</em>, and <em>IOPS - Total</em>. You can also try typing the name into the search to quickly display the desired field.</p>
+<p>Let&#8217;s add a few columns to the table. Click the Gear icon on the right and select <em>Hypervisor name</em>, <em>IOPS - Total</em>, and <em>Latency - Total</em>. You can also try typing the name into the search to quickly display the desired field.</p>
 <div class="paragraph">
 <p>These columns are now displayed in the table. You can sort the table by any of these columns. Note that the columns are displayed in the order in which they were added to the widget.</p>
 </div>
 </li>
 <li>
-<p>For this exercise we will exclude VMs that are not actively in use, so let&#8217;s filter out anything with less than 10 total IOPS. Click the <strong>[+]</strong> button next to <strong>Filter by</strong> and select <em>IOPS - Total</em>. Click on <strong>Any</strong> and enter "10" in the <strong>from</strong> field. Leave the <strong>to</strong> field empty.</p>
+<p>For this exercise we will exclude VMs that are not actively in use, so let&#8217;s filter out anything with less than 10 total IOPS. Click the <strong>[+]</strong> button next to <strong>Filter by</strong> and select <em>IOPS - Total</em>. Click on <strong>Any</strong> and enter "10" in the <strong>from</strong> field. Leave the <strong>to</strong> field empty. Click outsude the filter field or press Enter to set the filter.</p>
 <div class="paragraph">
 <p>The table now shows only VMs with 10 or more total IOPS.</p>
 </div>
@@ -491,6 +498,13 @@
 <p>The table rows are now grouped according to your setting. You can expand and collapse the groups as needed. Grouped rows show rolled up data for each of the columns. Some columns allow you to choose the roll up method for that column.</p>
 </div>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/VMDashboard-TableWidgetGroup.png" alt="VMDashboard TableWidgetGroup"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>When you have customized the table widget to your satisfaction, click the <strong>[Save]</strong> button.</p>
 <div class="paragraph">
@@ -503,7 +517,7 @@
 <p>You can resize the widget on the dashboard by dragging the lower-right corner. Make the widget wider to show all the columns clearly. Click <strong>Save</strong> to save the current dashboard.</p>
 </div>
 <div class="paragraph">
-<p>Next we will add some charts to show our VM Performance. Let&#8217;s create a line chart comparing VM latency with Storage latency.</p>
+<p>Next we will add some charts to show our VM Performance. Let&#8217;s create a line chart comparing VM latency with VMDK latency.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -514,18 +528,21 @@
 <p>Click the <strong>[Add widget]</strong> icon and select <em>Line Chart</em> to add a new line chart widget to the dashboard.</p>
 </li>
 <li>
-<p>The <strong>Edit Widget</strong> dialog opens. Name this widget "VM vs Storage Max Latency"</p>
+<p>The <strong>Edit Widget</strong> dialog opens. Name this widget "VM / VMDK Max Latency"</p>
 </li>
 <li>
 <p>Select <strong>Virtual Machine</strong> and choose <em>Latency - Max</em>. Set any filters you wish, or leave <strong>Filter by</strong> empty. For <strong>Roll up</strong>, choose <em>Sum</em> by <em>All</em>. Display this data as a <em>Line Chart</em>, and leave <em>Y-Axis</em> as <em>Primary</em>.</p>
 </li>
 <li>
-<p>Click the <strong>[+Query]</strong> button to add a second data line. For this line, select <em>Storage</em> and <em>Latency - Max</em>. Set any filters you wish, or leave <strong>Filter by</strong> empty. For <strong>Roll up</strong>, choose <em>Sum</em> by <em>All</em>. Display this data as a <em>Line Chart</em>, and leave <em>Y-Axis</em> as <em>Primary</em>.</p>
+<p>Click the <strong>[+Query]</strong> button to add a second data line. For this line, select <em>VMDK</em> and <em>Latency - Max</em>. Set any filters you wish, or leave <strong>Filter by</strong> empty. For <strong>Roll up</strong>, choose <em>Sum</em> by <em>All</em>. Display this data as a <em>Line Chart</em>, and leave <em>Y-Axis</em> as <em>Primary</em>.</p>
 </li>
 <li>
 <p>Click <strong>[Save]</strong> to add this widget to the dashboard.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/VMDashboard-LineChartVMLatency.png" alt="VMDashboard LineChartVMLatency"></span></p>
 </div>
 <div class="paragraph">
 <p>Next we will add a chart showing VM Read, Write and Total IOPS in a single chart.</p>
@@ -547,6 +564,16 @@
 <li>
 <p>Click the <strong>[+Query]</strong> button to add a third data line. For this line, select <strong>Virtual Machine</strong> and choose <em>IOPS - Write</em>.</p>
 </li>
+<li>
+<p>Click <strong>Show legend</strong> to display a legend for this widget on the dashboard.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/VMDashboard-AreaChartVMIOPS.png" alt="VMDashboard AreaChartVMIOPS"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Click <strong>[Save]</strong> to add this widget to the dashboard.</p>
 </li>
