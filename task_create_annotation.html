@@ -422,6 +422,23 @@
 are notes that provide information about an asset, such as physical location, end<br>
 of life, storage tier, or volume service levels.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="defining-annotations">Defining annotations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using annotations, you can add custom business-specific data that matches<br>
+your business needs to assets. While Cloud Insights provides a set of<br>
+default annotations, such as asset life cycle (birthday or end of life),<br>
+building or data center location, and tier you might find that you want to<br>
+view data in other ways.</p>
+</div>
+<div class="paragraph">
+<p>The data in custom annotations supplements device data already collected,<br>
+such as switch manufacturer, number of ports, and performance statistics.<br>
+The data you add using annotations is not discovered by Cloud Insights.</p>
+</div>
 <!-- toc disabled -->
 </div>
 </div>
@@ -468,9 +485,9 @@ physical location of an asset in Data Center 4:</p>
 </li>
 </ol>
 </div>
-<div class="olist loweralpha">
+<div class="olist arabic">
 <div class="title">Steps</div>
-<ol class="loweralpha" type="a">
+<ol class="arabic">
 <li>
 <p>Enter a name for the annotation (Location)</p>
 </li>
@@ -493,7 +510,7 @@ physical location of an asset in Data Center 4:</p>
 <div class="sect2">
 <h3 id="default-storage-annotation-rules">Default storage annotation rules</h3>
 <div class="paragraph lead">
-<p>To expedite the assignment of storage annotations to your resources, OnCommand Insight includes 21 default annotation rules, which associate a tier level with a storage tier model. All of your storage resources are automatically associated with a tier upon acquisition of the assets in your environment.<br>
+<p>To expedite the assignment of storage annotations to your resources, Cloud Insights includes 21 default annotation rules, which associate a tier level with a storage tier model. All of your storage resources are automatically associated with a tier upon acquisition of the assets in your environment.<br>
 The default annotation rules apply a tier annotations in the following way:</p>
 </div>
 <div class="dlist">
@@ -515,9 +532,11 @@ The default annotation rules apply a tier annotations in the following way:</p>
 <div class="sect2">
 <h3 id="creating-annotation-rules">Creating annotation rules</h3>
 <div class="paragraph lead">
-<p>As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Insight evaluates the annotation rules.<br>
-.Before you begin<br>
-You must have created a query for the annotation rule.</p>
+<p>As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Insight evaluates the annotation rules.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>You must have created a query for the annotation rule.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>

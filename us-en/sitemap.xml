@@ -20,13 +20,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/cloudinsights/</loc>
-      
-        <lastmod>2018-07-10T21:11:20+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/concept_dashboard_features.html</loc>
       
         <lastmod>2018-07-24T14:36:19+00:00</lastmod>
@@ -57,7 +50,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights//search.html</loc>
       
-        <lastmod>2018-07-30T20:35:54+00:00</lastmod>
+        <lastmod>2018-08-01T13:23:04+00:00</lastmod>
       
     </url>
   
@@ -83,16 +76,16 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/cloudinsights/task_create_annotation.html</loc>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/task_create_annotataion_rules.html</loc>
       
-        <lastmod>2018-07-23T13:24:27+00:00</lastmod>
+        <lastmod>2018-07-26T17:32:32+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/cloudinsights/task_create_annotations.html</loc>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/task_create_annotation.html</loc>
       
-        <lastmod>2018-07-18T14:47:06+00:00</lastmod>
+        <lastmod>2018-08-01T13:16:13+00:00</lastmod>
       
     </url>
   
