@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
+  <head>
+  <title>Alerting with performance policies | NetApp Cloud Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation">
+  <meta http-equiv="nss-subtype" content="User Guide">
+
+  
+
+  <meta name="description" content="You create performance policies to set thresholds that trigger alerts to notify you about issues related to the resources in your environment. For example, y...">
+  <meta name="keywords" content=" performance policy, performance, thresholds, alerts, preference, delete">
+
+  <!-- Icons -->
+  <link rel="icon" href="/cloudinsights/images/favicon.ico" type="image/x-icon">
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- LUCI CSS Content -->
+  <link rel="stylesheet" href="/cloudinsights/common/css/esb.min.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/doc.css">
+  <link rel="stylesheet" href="/cloudinsights/common/css/doc-components.css">
+
+  <link rel="stylesheet" href='/cloudinsights/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloudinsights/css/clouddocs.css' type='text/css'>
+
+  <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
+  <link rel="stylesheet" type="text/css" href="/cloudinsights/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloudinsights/css/customstyles.css"> -->
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/cloudinsights/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel='stylesheet' href='/cloudinsights/css/netapp.css' type='text/css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/cloudinsights/js/na-search.js'></script>
+  
+
+  <script src='/cloudinsights/js/clouddocs.js'></script>
+  <script src='/cloudinsights/js/s_code_impl.js'></script>
+  <script src="/cloudinsights/js/jquery.navgoco.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+  <script src="/cloudinsights/js/toc.js"></script>
+  <script src="/cloudinsights/js/customscripts.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco({
+              caretHtml: '',
+              accordion: true,
+              openClass: 'active', // open
+              save: false, // leave false or nav highlighting doesn't work right
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      })
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+
+  <!-- Controls the i18n Browser Redirection -->
+  <script>
+    var siteLocales = [];
+    
+      siteLocales.push("zz");
+    
+      siteLocales.push("en");
+    
+      siteLocales.push("us-en");
+    
+
+    standardizeUrl(siteLocales, "clouddocs.netapp.com", "https://docs.netapp.com");
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class="n-doc__component-detail">
+    <a href="#n-main-content" class="visually-hidden">Skip to main content</a>
+<div class="n-off-canvas-menu">
+  <div class="n-off-canvas-menu__menu">
+    <div class="n-off-canvas-menu__menu-inner">
+      <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
+      <ul class="n-off-canvas-menu__property-navigation-list">
+        <li class="n-off-canvas-menu__property-navigation-list-item ">
+          <a href="https://docs.netapp.com/zz/" class="n-off-canvas-menu__property-navigation-link">
+            Home
+          </a>
+          <div class="n-off-canvas-menu__child-menu">
+            <ul class="n-menu__list">
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="n-off-canvas-menu__global-navigation-list">
+         <li class="n-off-canvas-menu__global-navigation-list-header">More From NetApp</li>
+         <li class="n-off-canvas-menu__global-navigation-list-item"><a href="#" class="n-off-canvas-menu__global-navigation-link">Netapp.com</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="n-off-canvas-menu__content-wrap">
+      <!-- Header -->
+      <header>
+  <!-- Top Hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+            <li class="n-top-hat__list-item">
+              <a href="http://www.netapp.com" class="n-top-hat__link">NetApp.com</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Bar -->
+  <div class="n-property-bar n-property-bar--v3">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+          <title>bars</title>
+          <use xlink:href="/cloudinsights/common/svg/sprite.svg#bars"></use>
+        </svg></a>
+      </div>
+      <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/zz/">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
+              <title>NetApp</title>
+              <use xlink:href="/cloudinsights/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+          <h2 class="n-property-bar__property-name">Cloud Docs</h2>
+        </a>
+      </div>
+
+      <!-- NetApp Search Bar -->
+      
+      <div id="search-demo-container" class="n-property-bar__search">
+        <div id="react-search"></div>
+      </div>
+      
+
+      <div id="ie-i18n-menu" class="n-property-bar__utils">
+        <ul class="n-property-navigation-bar__utils-list">
+          <li class="n-property-navigation-bar__utils-list-item">
+            <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
+              <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
+                <title>globe</title>
+                <use xlink:href="/cloudinsights/common/svg/sprite.svg#globe"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End NetApp Search Bar -->
+    </div>
+
+    <div class="n-property-bar__menus">
+      <div id="n-property-navigation-bar__menu--language-selector" class="n-menu n-menu--v3">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list">
+                <li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="/cloudinsights/us-en/" class="n-menu__header-text">English</a>
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: zz
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+      <!-- Content -->
+      <main role="main" id="n-main-content" class="n-main-content">
+        <div class="n-container">
+          <div class="n-row">
+            <div class="n-doc n-doc__component-list">
+              <!-- Sidebar Column -->
+              
+              <div class="col-md-3" >
+                  
+
+<ul id="mysidebar" class="nav">
+  
+
+  
+    <li><a href="index.html">Cloud Insights documentation</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Getting started</a>
+      <ul>
+        
+
+  
+    <li><a href="task_cloud_insights_onboarding_1.html">Onboarding</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Collecting Data</a>
+      <ul>
+        
+
+  
+    <li><a href="task_getting_started_with_cloud_insights.html">Overview</a></li>
+  
+
+  
+    <li><a href="task_configure_data_collectors.html">Configuring Data Collectors</a></li>
+  
+
+  
+    <li><a href="concept_determining_data_source_acq_status.html">Determining Data Source Acquisition Status</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="task_invite_users.html">Inviting Users</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Dashboards</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_dashboards_overview.html">Dashboard Overview</a></li>
+  
+
+  
+    <li><a href="concept_dashboard_features.html">Features of Dashboards</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Sample Dashboards</a>
+      <ul>
+        
+
+  
+    <li><a href="task_dashboard_example_VM_performance.html">Virtual Machine Performance</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">All About Annotations</a>
+      <ul>
+        
+
+  
+    <li><a href="task_create_annotation.html">Creating Annotations</a></li>
+  
+
+  
+    <li><a href="task_create_annotation_rules.html">Creating Annotation Rules</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Reference</a>
+      <ul>
+        
+
+  
+    <li><a href="TBD.html">FAQ</a></li>
+  
+
+  
+    <li><a href="TBD.html">Cloud Insights Release Notes</a></li>
+  
+
+  
+    <li><a href="TBD.html">What's new</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+              </div>
+              
+
+              <div class="n-doc__component-detail-content n-doc__component-detail-content--show-code">
+                <!-- Begin of page container -->
+                <article class="page-content">
+                  
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Alerting with performance policies
+    <span>
+      
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/master/task_create_performance_policies.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Alerting with performance policies](https://docs.netapp.com/zz/cloudinsights/task_create_performance_policies.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+      
+    </span>
+  </h1>
+</div>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>You create performance policies to set thresholds that trigger alerts to notify you about issues related to the resources in your network. For example, you can create a performance policy to alert you when the total utilization for storage pools is greater than 60%.</p>
+</div>
+<div class="paragraph">
+<p>You can create performance policies for the following objects:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datastore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hypervisor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Qtree</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage node</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage pool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VMDK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual machine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-a-performance-policy">Creating a performance policy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can create performance policies with thresholds for metrics associated with the objects you are monitoring. By default, performance policies apply to all objects of the specified type when you create them. You can create an annotation to include only a specific asset or a set of assets in the performance policy.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>When using an annotation in a performance policy, the annotation must exist before the policy is created.</p>
+</div>
+<div class="paragraph">
+<div class="title">About this task</div>
+<p>You create a performance policy that provides notification when one or more Datastores you are monitoring exceeds a threshold you set. Your system might already contain a global policy that meets your needs or a policy using annotations might also work if you annotate your Datastores.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Cloud Insights menu bar, click <strong>Manage &gt; Performance Policies</strong></p>
+<div class="paragraph">
+<p>The Performance Policies page is displayed. Policies are organized by object, and are evaluated in the order in which they appear in the list.</p>
+</div>
+</li>
+<li>
+<p>In the Performance Policies page, Click <strong>+Performance Policy</strong></p>
+<div class="paragraph">
+<p>The <strong>Add Policy</strong> dialog is displayed.</p>
+</div>
+</li>
+<li>
+<p>In the <strong>Policy</strong> name field, enter a name for the policy.</p>
+<div class="paragraph">
+<p>You must use a name that is unique among all policy names for the object. For example, you cannot have two policies named "Latency" for an internal volume; however, you can have a "Latency" policy for an internal volume and another "Latency" policy for a different volume. The best practice is to always use a unique name for any policy, regardless of the object type.</p>
+</div>
+</li>
+<li>
+<p>From the <strong>Apply to objects</strong> of type list, select the type of object to which the policy applies.</p>
+<div class="paragraph">
+<p>When you select <strong>Port</strong>, you must include the object the port is connected  to.</p>
+</div>
+</li>
+<li>
+<p>From the <strong>With annotation list</strong>, select an annotation type, if applicable, and enter a value for the annotation in the <strong>Value box</strong> to apply the policy only to objects that have this particular annotation set.</p>
+</li>
+<li>
+<p>From the <strong>Apply After a Window of</strong> select when an alert is raised to indicate a threshold violation.</p>
+<div class="paragraph">
+<p><strong>First occurrence</strong> triggers an alert when a threshold is exceeded for the first time. All other options trigger an alert when the threshold is crossed once and is continuously crossed for at least the specified amount of time.</p>
+</div>
+</li>
+<li>
+<p>From the <strong>With severity</strong> list, select the severity for the violation.
+.</p>
+<div class="paragraph">
+<p>By default, email alerts on policy violations are sent to the recipients in the global email list. You can override these settings so that alerts for a particular policy are sent to specific recipients.</p>
+</div>
+</li>
+<li>
+<p>In the <strong>Create alert if</strong> section, select a performance counter and an operator, and then enter a value to create a threshold.</p>
+<div class="paragraph">
+<p>Add additional counters for your policy.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong> to save the new policy.</p>
+</li>
+<li>
+<p>Ensure the order of the policy is correct. To change the order, use the Edit menu for the policy.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+                </article>
+                <!-- Page Container -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      
+      <footer class="n-footer n-footer--v1" style="border-top: solid 10px #DFDFDF;">
+        <div class="n-footer__bottom">
+          <div class="n-container">
+            <div class="n-footer__bottom-left">
+              <div class="n-footer__copyright">
+                  <a href="//www.netapp.com/us/legal/copyright.aspx" class="n-footer__copyright-link">© 1994-2018 NetApp, Inc. All rights reserved.</a>
+              </div>
+              <div class="n-footer__copyright">
+                <a href="//www.netapp.com/us/legal/netapptmlist.aspx" class="n-footer__copyright-link">Trademarks</a>
+              </div>
+              <div class="n-footer__social-links">
+                <ul class="n-footer__social-link-list">
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-blog" href="http://blog.netapp.com" target="_blank" title="blog" alt="blog">
+                      <span class="n-footer__social-link-text">blog</span>
+                      <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                        <title>blog@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#blog"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-community" href="http://community.netapp.com/" target="_blank" title="community" alt="community">
+                      <span class="n-footer__social-link-text">community</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>community@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#comments"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netappdoc" target="_blank" title="twitter" alt="twitter">
+                      <span class="n-footer__social-link-text">twitter</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>twitter@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTechCommTV/" target="_blank" title="youtube" alt="youtube">
+                      <span class="n-footer__social-link-text">youtube</span>
+                      <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                        <title>youtube@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloudinsights/common/svg/sprite.svg#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="n-footer__bottom-right">
+                <p class="n-footer__fine-print">
+                    Have feedback for our website?
+                    <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+                </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="/cloudinsights/common/js/components.js"></script>
+    <script src="/cloudinsights/common/js/doc-components.js"></script>
+
+    <!-- i18n script -->
+    <script type="text/javascript" src="/cloudinsights/js/responsive.js"></script>
+
+    <!-- Elasticsearch JS -->
+    <script type="text/javascript" src='/cloudinsights/js/bundle.js'></script>
+  </body>
+
+  
+</html>
